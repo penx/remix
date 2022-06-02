@@ -13,7 +13,7 @@
     "url": "https://github.com/penx/remix/issues"
   },
   "scripts": {
-    "build": "tsc -b"
+    "build": "rm -rf build && tsc -b"
   },
   "dependencies": {
     "@remix-run/node": "1.5.1"
