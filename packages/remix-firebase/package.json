@@ -1,15 +1,18 @@
 {
-  "name": "@remix-run/express",
-  "description": "Express server request handler for Remix",
+  "name": "remix-firebase",
+  "description": "Firebase functions request handler for Remix",
   "version": "1.5.1",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/remix-run/remix",
-    "directory": "packages/remix-express"
+    "url": "https://github.com/penx/remix",
+    "directory": "packages/remix-firebase"
   },
   "bugs": {
-    "url": "https://github.com/remix-run/remix/issues"
+    "url": "https://github.com/penx/remix/issues"
+  },
+  "scripts": {
+    "build": "tsc -b"
   },
   "dependencies": {
     "@remix-run/node": "1.5.1"
