@@ -9,7 +9,6 @@
     "strict": true,
 
     "declaration": true,
-    "emitDeclarationOnly": true,
 
     "outDir": "./build",
     "rootDir": "."

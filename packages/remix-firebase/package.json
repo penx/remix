@@ -1,8 +1,9 @@
 {
   "name": "remix-firebase",
   "description": "Firebase functions request handler for Remix",
-  "version": "1.5.1",
+  "version": "0.0.1",
   "license": "MIT",
+  "main": "build/index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/penx/remix",
