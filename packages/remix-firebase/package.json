@@ -1,0 +1,31 @@
+{
+  "name": "remix-firebase",
+  "description": "Firebase functions request handler for Remix",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "build/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/penx/remix",
+    "directory": "packages/remix-firebase"
+  },
+  "bugs": {
+    "url": "https://github.com/penx/remix/issues"
+  },
+  "scripts": {
+    "build": "rm -rf build && tsc -b"
+  },
+  "dependencies": {
+    "@remix-run/node": "1.5.1"
+  },
+  "peerDependencies": {
+    "firebase-functions": "^3.21.2"
+  },
+  "devDependencies": {
+    "@types/supertest": "^2.0.10",
+    "firebase-admin": "^10.2.0",
+    "firebase-functions": "^3.21.2",
+    "node-mocks-http": "^1.10.1",
+    "supertest": "^6.0.1"
+  }
+}
