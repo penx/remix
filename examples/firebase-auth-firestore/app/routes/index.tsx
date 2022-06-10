@@ -7,6 +7,7 @@ import {
   useFetcher,
   useLoaderData,
 } from "@remix-run/react";
+import { useState } from "react";
 import { useEffect, useRef } from "react";
 
 import { requireAuth } from "~/server/auth.server";
@@ -70,10 +71,31 @@ const TodoComponent: React.FC<{ id: string; title: string }> = (props) => {
   );
 };
 
+function useEventStream(href: string) {
+  const [data, setData] = useState("");
+  useEffect(() => {
+    // console.log("useEventStream useEffect");
+    const eventSource = new EventSource(href);
+    eventSource.addEventListener("message", handler);
+    function handler(event: MessageEvent) {
+      console.warn("useEventStream handler");
+      setData(event.data || "unknown");
+    }
+    return () => {
+      eventSource.removeEventListener("message", handler);
+    };
+  }, []);
+  return data;
+}
+
 export default function Index() {
   const action = useActionData<ActionData>();
   const data = useLoaderData<LoaderData>();
   const ref = useRef<HTMLInputElement>(null);
+  const events = useEventStream("/events");
+  if (events) {
+    console.log(events);
+  }
   useEffect(() => {
     ref.current?.focus();
   }, [ref]);
